@@ -33,3 +33,10 @@ chmod +x setup_miniconda.sh
 chmod +x setup_autotrain.sh
 ./setup_autotrain.sh
 ```
+
+Now, run trainer.py
+
+```
+python trainer.py
+
+```
