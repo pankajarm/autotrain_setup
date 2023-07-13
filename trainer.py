@@ -15,6 +15,7 @@ def train():
     
     # create tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
+    tokenizer.pad_token = tokenizer.eos_token
     
     # create model
     model = AutoModelForCausalLM.from_pretrained(
@@ -56,6 +57,7 @@ def train():
         tokenizer=tokenizer,
         args=training_args,
         packing=True,
+        peft_config=peft_config,
     )
     # start the training
     trainer.train()
