@@ -1,22 +1,6 @@
 #!/bin/bash
 
-# Step 1: Install miniconda
-echo "Installing Miniconda..."
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
-echo "Miniconda installed successfully."
-
-# Step 2: Create a new conda environment
-echo "Creating a new Conda environment..."
-conda create -y -n autotrain_env python=3.9.0
-echo "Conda environment created successfully."
-
-# Activate the conda environment
-echo "Activating the Conda environment..."
-source activate myenv
-echo "Conda environment activated successfully."
-
-# Step 3: Install necessary packages
+# Step 1: Install necessary packages
 echo "Installing necessary packages..."
 conda install -y cudatoolkit
 conda install -y pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
@@ -35,7 +19,17 @@ pip install sentencepiece
 conda install -y -c conda-forge hdbscan
 sudo apt-get install --reinstall -y libpq-dev
 pip install tiktoken
-pip install autotrain-advanced
-echo "All packages installed successfully."
 
-echo "autotrain-advances is ready now, go tran your best model!."
+# Step 2: Install Git LFS
+echo "Installing Git LFS..."
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get install -y git-lfs
+git lfs install
+echo "Git LFS installed successfully."
+
+# Step 3: Install autotrain-advanced
+echo "Installing autotrain-advanced..."
+pip install autotrain-advanced
+echo "Autotrain-advanced installed successfully."
+
+echo "Script finished successfully."
