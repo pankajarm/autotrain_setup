@@ -8,6 +8,7 @@ bash Miniconda3-latest-Linux-x86_64.sh
 
 ### now ready for conda new environment
 conda create -n autotrain_env python=3.9.0
+conda activate autotrain_env
 
 conda install cudatoolkit -y
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia -y
@@ -30,6 +31,13 @@ conda install -c conda-forge hdbscan -y
 sudo apt-get install --reinstall libpq-dev -y
 
 pip install tiktoken
+
+#### install git lfs
+
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get install git-lfs
+git lfs install
+
 
 pip install autotrain-advanced
 
