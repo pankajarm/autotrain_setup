@@ -24,6 +24,12 @@ bash setup_autotrain.sh
 if any issues running script with bash, provide right permissions
 
 ```
+chmod +x setup_miniconda.sh
+./setup_miniconda.sh
+```
+
+
+```
 chmod +x setup_autotrain.sh
 ./setup_autotrain.sh
 ```
