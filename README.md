@@ -9,13 +9,19 @@ cd autotrain_setup
 Step1: install the mininconda
 
 ```
-bash setup_miniconda.sh
+bash install_miniconda.sh
 ```
 
 Close the terminal and open again, It should show (base) into new terminal, it mean base conda environment is ready
 
 
-Step2: Install all libraries and autotrain-advanced
+Step2: Setup your new conda envrionment
+```
+bash setup_conda.sh
+
+```
+
+Step3: Install all libraries and autotrain-advanced
 
 ```
 bash setup_autotrain.sh
@@ -24,8 +30,14 @@ bash setup_autotrain.sh
 if any issues running script with bash, provide right permissions
 
 ```
-chmod +x setup_miniconda.sh
-./setup_miniconda.sh
+chmod +x install_miniconda.sh
+./install_miniconda.sh
+```
+
+
+```
+chmod +x setup_conda.sh
+./setup_conda.sh
 ```
 
 
